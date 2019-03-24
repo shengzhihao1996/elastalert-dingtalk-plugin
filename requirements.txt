@@ -1,5 +1,4 @@
-elastalert==0.1.20
-elasticsearch>=5.0.0
+elastalert==0.1.38
 pyOpenSSL==16.2.0
 requests==2.18.1
 setuptools>=11.3
