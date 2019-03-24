@@ -1,0 +1,17 @@
+es_host: elasticsearch.product.co-mall
+es_port: 80
+name: Deadman Switch PagerDuty
+type: frequency
+index: k8s-system7*
+num_events: 3
+timeframe:
+  minutes: 10
+filter:
+- query:
+    query_string:
+      query: "kubernetes.container_name:(jci-zuul-api)"
+include: ["kubernetes.container_name","log"]
+alert: 
+- "elastalert_modules.dingtalk_alert.DingTalkAlerter"
+dingtalk_webhook: ""
+dingtalk_msgtype: "text"
